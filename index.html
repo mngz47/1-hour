@@ -310,9 +310,9 @@ chat_count = 0;
 
 					var cols = rows[a].getElementsByTagName('td');
 
-						alert("col count "+cols.length);
+						//alert("col count "+cols.length);
 						
-							if(usedMinutes<m_time_minutes){
+							if(usedMinutes<(m_time_minutes+parseInt(cols[1].innerHTML))){
 								
 							e('m-time-body').innerHTML = cols[0].innerHTML;
 
@@ -331,7 +331,7 @@ chat_count = 0;
 							}
 							usedMinutes += parseInt(cols[1].innerHTML);
 							break;
-						}	
+							}	
 						
 							
 					}
