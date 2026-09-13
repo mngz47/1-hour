@@ -271,11 +271,155 @@ chat_count = 0;
 
 <div style="background-image:url('https://raw.githubusercontent.com/mngz47/productlists-resources/main/ddg_clips.PNG');background-repeat: no-repeat;background-size:100% auto;width:100%;height:300px;" >
 <p class=block >
-<h3 style="background:white;" >Guidelines</h3>
+<h3 style="background:white;" >M Time</h3>
 <label style="background:white;" >Specializing in long-term TikTok audio campaigns</label>
 </p>
 </div>
 
+					<div style="border: 1px solid black;border-radius: 30%;background-color:red;font-color:green;" >
+<span id=m-time-minutes >60</span>
+<span id=m-time-k >K</span>
+			<div style="border: 1px solid black;background-color:blue;" id=m-time-body ></div>
+<span id=m-time-v >V</span>
+<span id=m-time-q >Q</span>
+						
+					</div>
+
+
+
+
+<h3>Upload key to start the watch</h3>
+					
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type = "text/javascript">  
+
+	var m_time_minutes = 0;
+		
+		function startWatch() {
+
+			var rows = e('csvtable').getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+
+			if(rows.length>0){
+
+				if(m_time_minutes<60){
+
+					e('m-time-minutes').innerHTML = m_time_seconds;
+
+					var usedMinutes = 0;
+
+					for(var a=0;a<rows.length;a++){
+
+					var cols = rows[a].getElementsByTagName('tr');
+
+						
+					
+						
+						if(usedMinutes<m_time_minutes){
+								
+							e('m-time-body').innerHTML = cols[0].innerHTML
+
+							if(cols[2].innerHTML == 'K'){		
+										e('m-time-k').backgroundColor = 'blue';
+										e('m-time-v').backgroundColor = 'white';
+										e('m-time-q').backgroundColor = 'white';
+							}else if(cols[2].innerHTML == 'V'){
+											e('m-time-k').backgroundColor = 'white';
+										e('m-time-v').backgroundColor = 'blue';
+										e('m-time-q').backgroundColor = 'white';
+							}else if(cols[2].innerHTML == 'Q'){
+											e('m-time-k').backgroundColor = 'white';
+										e('m-time-v').backgroundColor = 'white';
+										e('m-time-q').backgroundColor = 'blue';
+
+							}
+							
+						}	
+
+						usedMinutes += parseInt(cols[1].innerHTML);
+							
+					}
+				
+					m_time_minutes+=1;
+					setTimeout(startwatch,60000);
+
+			}else{
+
+					m_time_minutes=0;
+					setTimeout(startwatch,60000);				
+			}
+			}
+		}
+		
+        function ExportToTable() {  
+            var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.csv)$/;  
+      
+            //Checks whether the file is a valid csv file    
+            if (regex.test($("#csvfile").val().toLowerCase())) {  
+                //Checks whether the browser supports HTML5    
+                if (typeof(FileReader) != "undefined") {  
+                    var reader = new FileReader();  
+                    
+                    reader.onload = function(e) {  
+                        var table = $("#csvtable > tbody");  
+         
+                        //Splitting of Rows in the csv file    
+                        var csvrows = e.target.result.split("\n");  
+                        
+                        for (var i = 0; i < csvrows.length; i++) {  
+                            if (csvrows[i] != "") {  
+                                var row = "<tr>";  
+                                var csvcols = csvrows[i].split(",");  
+                           
+                                //Looping through each cell in a csv row    
+                                for (var j = 0; j < csvcols.length; j++) {  
+                                    var cols = "<td>" + csvcols[j] + "</td>";  
+                                    
+                                    row += cols;  
+                                }  
+           
+                                row += "</tr>";  
+           
+                                table.append(row);  
+                            }  
+                        }  
+                        
+                        $('#csvtable').show();  
+                    }  
+                    
+                    reader.readAsText($("#csvfile")[0].files[0]);  
+                } else {  
+                    alert("Sorry! Your browser does not support HTML5!");  
+                }  
+            } else {  
+                alert("Please upload a valid CSV file!");  
+            }  
+        }
+    </script> 
+
+    <input type="file" id="csvfile" />  
+    <input type="button" id="viewfile" value="Start Watch" onclick="ExportToTable();startWatch();" />  
+
+	   <br />  
+    <br />  
+    <table id="csvtable">  
+        <thead>  
+            <tr>  
+                <th>    
+                    First    
+                </th>  
+                <th>    
+                    Second    
+                </th>  
+                <th>    
+                    Third    
+                </th>  
+                <th>    
+                    ...    
+                </th>  
+            </tr>  
+        </thead>  
+        <tbody></tbody>  
+    </table> 				
 
           <div id=course style="font-size:1.2em;" >
 
