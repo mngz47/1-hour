@@ -337,12 +337,22 @@ chat_count = 0;
 					}
 				
 					m_time_minutes+=1;
-					setTimeout(startwatch,60000);
+					var sw = function(){
+						
+							startwatch();
+						
+					};
+					setTimeout(sw,60000);
 
 			}else{
 
 					m_time_minutes=0;
-					setTimeout(startwatch,60000);				
+					var sw = function(){
+						
+							startwatch();
+						
+					};
+					setTimeout(sw,60000);				
 			}
 			}
 		}
