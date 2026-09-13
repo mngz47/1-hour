@@ -311,11 +311,9 @@ chat_count = 0;
 					var cols = rows[a].getElementsByTagName('tr');
 
 						
-					
-						
 						if(usedMinutes<m_time_minutes){
 								
-							e('m-time-body').innerHTML = cols[0].innerHTML
+							e('m-time-body').innerHTML = cols[0].innerHTML;
 
 							if(cols[2].innerHTML == 'K'){		
 										e('m-time-k').backgroundColor = 'blue';
@@ -329,11 +327,8 @@ chat_count = 0;
 											e('m-time-k').backgroundColor = 'white';
 										e('m-time-v').backgroundColor = 'white';
 										e('m-time-q').backgroundColor = 'blue';
-
 							}
-							
 						}	
-
 						usedMinutes += parseInt(cols[1].innerHTML);
 							
 					}
