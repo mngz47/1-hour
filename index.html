@@ -314,9 +314,9 @@ chat_count = 0;
 					
 					for(var a=1;a<rows.length;a++){
 
-						var cols = rows[0].getElementsByTagName('td');
-					
 							if(usedMinutes<m_time_minutes){
+
+								var cols = rows[a].getElementsByTagName('td');
 								
 							e('m-time-body').innerHTML = cols[0].innerHTML;
 
