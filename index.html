@@ -323,17 +323,17 @@ chat_count = 0;
 							cols[0].style.backgroundColor = 'blue';	
 
 							if(cols[2].innerHTML == 'K'){		
-										e('m-time-k').backgroundColor = 'blue';
-										e('m-time-v').backgroundColor = 'white';
-										e('m-time-q').backgroundColor = 'white';
+										e('m-time-k').style.backgroundColor = 'blue';
+										e('m-time-v').style.backgroundColor = 'white'; 
+										e('m-time-q').style.backgroundColor = 'white';
 							}else if(cols[2].innerHTML == 'V'){
-											e('m-time-k').backgroundColor = 'white';
-										e('m-time-v').backgroundColor = 'blue';
-										e('m-time-q').backgroundColor = 'white';
+											e('m-time-k').style.backgroundColor = 'white';
+										e('m-time-v').style.backgroundColor = 'blue';
+										e('m-time-q').style.backgroundColor = 'white';
 							}else if(cols[2].innerHTML == 'Q'){
-											e('m-time-k').backgroundColor = 'white';
-										e('m-time-v').backgroundColor = 'white';
-										e('m-time-q').backgroundColor = 'blue';
+											e('m-time-k').style.backgroundColor = 'white';
+										e('m-time-v').style.backgroundColor = 'white';
+										e('m-time-q').style.backgroundColor = 'blue';
 							}
 
 								usedMinutes += parseInt(cols[1].innerHTML);
