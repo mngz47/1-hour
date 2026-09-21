@@ -316,7 +316,7 @@ chat_count = 0;
 
 						//alert("col count "+cols.length);
 						
-							if(usedMinutes<(m_time_minutes+parseInt(cols[1].innerHTML))){
+							if(usedMinutes<(m_time_minutes+parseInt(cols[1].innerHTML) && usedMinutes>m_time_minutes){
 								
 							e('m-time-body').innerHTML = cols[0].innerHTML;
 
@@ -336,6 +336,7 @@ chat_count = 0;
 										e('m-time-q').backgroundColor = 'blue';
 							}
 							usedMinutes += parseInt(cols[1].innerHTML);
+			
 							}	
 						
 							
